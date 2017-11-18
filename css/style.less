@@ -1420,6 +1420,65 @@ input[type=tel]{
 	100%{transform: translateY(0px);}
 }
 
+.map{
+	position: fixed;
+	top: 50px;
+	left: 50%;
+	z-index: 100;
+	margin-left: -383px;
+
+	width: 766px;
+	height: 560px;
+	background-image: url("../img/map.png");
+	background-repeat: no-repeat;
+
+	border: 7px solid #fff;
+
+	display: none;
+
+	&-close{
+		position: absolute;
+		top: 6px;
+		right: -40px;
+
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+
+		background-color: transparent;
+
+		border: none;
+		outline: none;
+
+		cursor: pointer;
+
+		&::before,
+		&::after{
+			content: "";
+			position: absolute;
+			top: 10px;
+			left: 0;
+
+			width: 25px;
+			height: 5px;
+			background-color: #d0d0d0;
+		}
+
+		&::before{
+			transform: rotate(45deg);
+		}
+
+		&::after{
+			transform: rotate(-45deg);
+		}
+
+		&:hover::before,
+		&:hover::after{
+			background-color: #00f;
+		}
+	}
+}
+
 .screen-blackout{
 	position: fixed;
 	top: 0;
@@ -1437,6 +1496,6 @@ input[type=tel]{
 }
 
 
-.show-js{
+.js-show{
 	display: block;
 }
