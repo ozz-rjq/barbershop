@@ -31,7 +31,6 @@ popupClose.addEventListener("click", function(event){
 });
 
 /* map events */
-
 for (var i = 0; i < mapOpen.length; i++) {
 	mapOpen[i].addEventListener("click", openMap);
 }
@@ -71,7 +70,7 @@ screenBlackout.addEventListener("click", function(event){
 
 
 
-
+/* additional */
 var infoAlert = document.querySelector(".main-navigation > ul li:first-child");
 var newsAlert = document.querySelector(".main-navigation > ul li:nth-child(2)");
 
