@@ -138,6 +138,7 @@ a{
 }
 
 input[type=text],
+input[type=password],
 input[type=tel]{
 	font-family: 'PT Sans Narrow', 'Arial', sans-serif;
 	font-size: 14px;
@@ -1344,14 +1345,54 @@ input[type=tel]{
 	&-addition{
 		margin-top: 12px;
 		margin-bottom: 14px;
+
+		input[type=checkbox]{
+			display: none;
+		}
 	}
 
 	&-label{
 		display: inline-block;
 		vertical-align: top;
 
+		font-size: 14px;
 		font-weight: 700;
 		line-height: 24px;
+
+		padding-left: 32px;
+
+		position: relative;
+
+		span{
+			position: absolute;
+			top: 2px;
+			left: 0;
+
+			box-sizing: border-box;
+			width: 20px;
+			height: 20px;
+
+			border: 2px solid #000;
+
+			&::before,
+			&::after{
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				width: 16px;
+				height: 2px;
+				background-color: #000;
+			}
+
+			&::before{
+				transform: rotate(45deg);
+			}
+
+			&::after{
+				transform: rotate(-45deg);
+			}
+		}
 	}
 
 	&-link{
@@ -1359,7 +1400,10 @@ input[type=tel]{
 		vertical-align: top;
 
 		color: #000;
+		font-size: 14px;
 		line-height: 24px;
+
+		margin-left: 77px;
 	}
 
 	&-btn{
@@ -1407,6 +1451,32 @@ input[type=tel]{
 		&:hover::after{
 			background-color: #fff;
 		}
+	}
+
+	.user-icon{
+		position: absolute;
+		top: 152px;
+		right: 95px;
+
+		width: 15px;
+		height: 15px;
+
+		background-image: url("../img/spritesheet.png");		
+		background-repeat: no-repeat;
+		background-position: 0px -239px;
+	}
+
+	.password-icon{
+		position: absolute;
+		top: 202px;
+		right: 95px;
+
+		width: 15px;
+		height: 17px;
+
+		background-image: url("../img/spritesheet.png");
+		background-repeat: no-repeat;
+		background-position: 0px -269px;
 	}
 }
 
