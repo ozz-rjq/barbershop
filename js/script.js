@@ -3,6 +3,8 @@
 var popup = document.querySelector(".modal-content");
 var popupOpen = document.querySelector(".js-popup-open");
 var popupClose = document.querySelector(".modal-content-close");
+var loginField = document.querySelector("#login");
+var passwordField = document.querySelector("#password");
 
 /* map variables */
 var map = document.querySelector(".map");
@@ -20,6 +22,8 @@ popupOpen.addEventListener("click", function(event){
 		popup.classList.add("modal-content-show");
 		screenBlackout.classList.add("js-show");
 	}
+	if(popup.classList.contains("modal-shake"))
+		popup.classList.remove("modal-shake");
 });
 
 popupClose.addEventListener("click", function(event){
@@ -28,6 +32,16 @@ popupClose.addEventListener("click", function(event){
 		popup.classList.remove("modal-content-show");
 		screenBlackout.classList.remove("js-show");
 	}
+	if(popup.classList.contains("modal-shake"))
+		popup.classList.remove("modal-shake");
+});
+
+popup.addEventListener("submit", function(event){
+	event.preventDefault();
+
+	if((loginField.value === "" || passwordField.value === "") 
+			&& !popup.classList.contains("modal-shake"))
+		popup.classList.add("modal-shake");
 });
 
 /* map events */

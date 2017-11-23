@@ -52,6 +52,7 @@ body{
 	text-align: center;
 
 	border: none;
+	outline: none;
 
 	background-color: #000;
 
@@ -1314,6 +1315,8 @@ input[type=tel]{
 	margin-left: -230px;
 	z-index: 100;
 
+	box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
+
 	display: none;
 
 	&-show{
@@ -1364,7 +1367,7 @@ input[type=tel]{
 
 		position: relative;
 
-		span{
+		> span{
 			position: absolute;
 			top: 2px;
 			left: 0;
@@ -1377,13 +1380,17 @@ input[type=tel]{
 
 			&::before,
 			&::after{
+				content: "";
+
 				position: absolute;
-				top: 0;
+				top: 7px;
 				left: 0;
 
 				width: 16px;
 				height: 2px;
 				background-color: #000;
+
+				display: none;
 			}
 
 			&::before{
@@ -1393,6 +1400,14 @@ input[type=tel]{
 			&::after{
 				transform: rotate(-45deg);
 			}
+		}
+	}
+
+	&-checkbox:checked + label{
+
+		> span::before,
+		> span::after{
+			display: block;
 		}
 	}
 
@@ -1484,10 +1499,8 @@ input[type=tel]{
 /* popup animation */
 
 @keyframes popup-show{
-	0%{transform: translateY(500px);}
-	25%{transform: translateY(-250px);}
-	50%{transform: translateY(100px);}
-	75%{transform: translateY(-50px);}
+	0%{transform: translateY(-500px);}
+	25%{transform: translateY(-25px) rotate(-45deg);}
 	100%{transform: translateY(0px);}
 }
 
@@ -1559,14 +1572,25 @@ input[type=tel]{
 	width: 100%;
 	height: 100%;
 
-	background-color: rgba(0,0,100,0.3);
+	background-color: rgba(120,120,100,0.3);
 
 	cursor: pointer;
 
 	display: none;
 }
 
+/* Additional JS classes*/
 
 .js-show{
 	display: block;
+}
+
+.modal-shake{
+	animation: modal-shake 0.8s;
+}
+
+@keyframes modal-shake{
+	0%, 50%{transform: translateY(25px);}
+	25%, 75%{transform: translateY(-20px);}
+	100%{transform: rotate(0deg);}
 }
