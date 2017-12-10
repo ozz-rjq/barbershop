@@ -46,11 +46,11 @@ body{
 	text-align: center;
 
 	border: none;
-	outline: none;
 
 	background-color: #000;
 
 	&:hover{
+		outline: 1px solid @btn-hover;
 		background-color: @btn-hover;
 		cursor: pointer;
 	}
@@ -143,9 +143,9 @@ input[type=tel]{
 	color: #000;
 
 	border: 2px solid #000101;
-	outline: none;
 
 	&:focus{
+		outline: 1px solid @btn-hover;
 		border-color: @btn-hover;
 	}
 }
@@ -363,11 +363,8 @@ input[type=tel]{
 	margin-bottom: 35px;
 
 	color: #000;
-	background: #f5f2ef url("../img/index.jpg") repeat;
-	background-image: url("../img/news-line.png");
-	background-repeat: no-repeat;
-	background-position: 465px 75px;
-	background-size: 8px 278px;
+	background: url("../img/news-line.png") 465px 75px no-repeat,
+							#f5f2ef url("../img/index.jpg");
 
 	display: flex;
 
@@ -1537,7 +1534,6 @@ input[type=tel]{
 		background-color: transparent;
 
 		border: none;
-		outline: none;
 
 		cursor: pointer;
 
