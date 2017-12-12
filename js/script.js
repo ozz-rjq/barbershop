@@ -88,6 +88,7 @@
 	/* additional */
 	var infoAlert = document.querySelector(".main-navigation > ul li:first-child");
 	var newsAlert = document.querySelector(".main-navigation > ul li:nth-child(2)");
+	var contactsAlert = document.querySelector(".main-navigation > ul li:last-child");
 
 	infoAlert.addEventListener("click", function(event){
 		event.preventDefault();
@@ -97,6 +98,11 @@
 	newsAlert.addEventListener("click", function(event){
 		event.preventDefault();
 		alert("\"News\" page wasn't created!");
+	});
+
+	contactsAlert.addEventListener("click", function(event){
+		event.preventDefault();
+		alert("\"Contacts\" page wasn't created!");
 	});
 
 }())
