@@ -83,6 +83,26 @@
 		}
 	});
 
+	/* add keyCodes */
+
+	window.addEventListener("keydown", function(event){
+		event.preventDefault();
+		if(event.keyCode === 27){
+			if(popup.classList.contains("modal-content-show"))
+				popup.classList.remove("modal-content-show");
+
+			if(popup.classList.contains("modal-shake"))
+				popup.classList.remove("modal-shake");
+
+			if(map.classList.contains("js-show")){
+				map.classList.remove("js-show");
+
+			if(screenBlackout.classList.contains("js-show"))
+				screenBlackout.classList.remove("js-show");
+			}
+		}
+	})
+
 
 
 	/* additional */

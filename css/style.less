@@ -508,7 +508,6 @@ input[type=tel]{
 }
 
 .footer-content{
-	float: left;
 	margin-top: 58px;
 
 	&-title{
@@ -644,20 +643,21 @@ input[type=tel]{
 /* INNER PAGES HEADER */
 
 .inner-page{
-
 	background-color: #f8f5f2;
 	background-image: url("../img/index.jpg");
 	background-repeat: repeat;
 
 	color: #000;
 
+	.main-navigation{
+		display: flex;
+	}
+
 	.main-header{
 		margin-bottom: 50px;
 	}
 
 	.logo{
-		float: left;
-
 		width: 150px;
 		
 		text-align: center;
@@ -1233,8 +1233,6 @@ input[type=tel]{
 	}
 
 	&-arsenal{
-		float: left;
-
 		width: 460px;
 		margin-right: 20px;
 	}
@@ -1251,8 +1249,6 @@ input[type=tel]{
 	}
 
 	&-prices{
-		float: left;
-
 		width: 460px;
 
 		&-table{
@@ -1276,15 +1272,11 @@ input[type=tel]{
 	}
 
 	&-left{
-		float: left;
-
 		margin: 0;
 		width: 380px;
 	}
 
 	&-right{
-		float: left;
-
 		width: 375px;
 		margin: 0;
 		margin-left: 100px;
