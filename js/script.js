@@ -39,11 +39,11 @@
 	});
 
 	popup.addEventListener("submit", function(event){
-		event.preventDefault();
-
 		if((loginField.value === "" || passwordField.value === "") 
-				&& !popup.classList.contains("modal-shake"))
-			popup.classList.add("modal-shake");
+				&& !popup.classList.contains("modal-shake")){
+				event.preventDefault();
+				popup.classList.add("modal-shake");
+		}
 	});
 
 	/* map events */
@@ -79,31 +79,28 @@
 		if(popup.classList.contains("modal-content-show"))
 			popup.classList.remove("modal-content-show");
 
-		if(map.classList.contains("js-show")){
+		if(map.classList.contains("js-show"))
 			map.classList.remove("js-show");
-		}
 	});
 
 	/* add keyCodes */
 
 	window.addEventListener("keydown", function(event){
-		event.preventDefault();
 		if(event.keyCode === 27){
+			event.preventDefault();
 			if(popup.classList.contains("modal-content-show"))
 				popup.classList.remove("modal-content-show");
 
 			if(popup.classList.contains("modal-shake"))
 				popup.classList.remove("modal-shake");
 
-			if(map.classList.contains("js-show")){
+			if(map.classList.contains("js-show"))
 				map.classList.remove("js-show");
 
 			if(screenBlackout.classList.contains("js-show"))
 				screenBlackout.classList.remove("js-show");
-			}
-		}
+		} 
 	})
-
 
 
 	/* additional */
@@ -125,5 +122,6 @@
 		event.preventDefault();
 		alert("\"Contacts\" page wasn't created!");
 	});
+
 
 }())
