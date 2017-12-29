@@ -21,6 +21,7 @@
 		event.preventDefault();
 		if(!popup.classList.contains("modal-content-show")){
 			popup.classList.add("modal-content-show");
+			loginField.focus();
 			screenBlackout.classList.add("js-show");
 		}
 		if(popup.classList.contains("modal-shake"))
